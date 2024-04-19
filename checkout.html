@@ -1,0 +1,121 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+    </style>
+</head>
+<body style="
+position: relative;
+margin-left: 35rem;
+margin-top:5rem;
+">
+
+<h1>Checkout Page</h1>
+
+<script>
+    // Function to get URL parameter by name
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Get the items parameter from the URL
+    var itemsParameter = getParameterByName('product');
+
+    if (itemsParameter) {
+        // Parse the JSON string into an array of items
+        var itemsDetails = JSON.parse(decodeURIComponent(itemsParameter));
+
+        // Display the items and their details
+        var tableAdded = false;  // Flag to check if the table is already added
+
+itemsDetails.forEach(function(item) {
+    // Check if the table is not added, then add the table and heading
+    if (!tableAdded) {
+        var tableElement = document.createElement('table');
+        tableElement.classList.add('item-table');
+        tableElement.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        `;
+
+        // Append the table to the body
+        document.body.appendChild(tableElement);
+
+        // Set the flag to true since the table is now added
+        tableAdded = true;
+    }
+
+    // Add rows to the existing tbody for each item
+    var rowElement = document.createElement('tr');
+    rowElement.innerHTML = `
+        <td class="name">${item.name}</td>
+        <td class="price">$${item.price.toFixed(2)}</td>
+        <td class="quantity">${item.quantity}</td>
+        <td class="total">$${(item.price * item.quantity).toFixed(2)}</td>
+    `;
+    document.querySelector('.item-table tbody').appendChild(rowElement);
+});
+
+
+
+        // Calculate and display the subtotal
+        var subtotal = itemsDetails.reduce(function(total, item) {
+            return total + item.price * item.quantity;
+        }, 0);
+
+        var subtotalElement = document.createElement('tr');
+subtotalElement.innerHTML = `
+    <td colspan="3" class="subtotal">Subtotal:</td>
+    <td class="subtotal">$${subtotal.toFixed(2)}</td>
+`;
+document.querySelector('.item-table tbody').appendChild(subtotalElement);
+
+// Add styling (adjust as needed)
+var tableElement = document.querySelector('.item-table');
+tableElement.style.borderCollapse = 'collapse';
+tableElement.querySelectorAll('th, td').forEach(function(cell) {
+    cell.style.border = '1px solid #ddd';
+    cell.style.padding = '8px';
+    cell.style.textAlign = 'center';
+});
+
+// Additional styling for header
+tableElement.querySelectorAll('th').forEach(function(header) {
+    header.style.backgroundColor = '#f2f2f2';
+});
+
+
+
+
+        // Add "Pay Now" button
+        var payNowButton = document.createElement('button');
+        payNowButton.innerText = 'Pay Now';
+        payNowButton.addEventListener('click', function() {
+            // Redirect to the payment page
+            window.location.href = 'payment.html';
+        });
+        document.body.appendChild(payNowButton);
+    } else {
+        // Handle the case where no items are found in the URL
+        document.body.innerHTML = '<p>No items found.</p>';
+    }
+</script>
+
+</body>
+</html>

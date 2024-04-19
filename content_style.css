@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+body{
+    background-image: url(images/bg.jpg);
+    background-attachment: fixed;
+}
+:root{
+    --green:#27ae60;
+    --dark-color: #219150;
+    --black: #000000;
+    --light-color: #dcdcdc;
+    --border: .1rem solid rgba(0,0,0,.1);
+    --border-hover:.1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0, 0, 0, 0.575);
+    --red:#ff0000;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition: width none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+
+/*section{
+    padding: 5rem 9%;
+}*/
+
+
+.header .header-1{
+    background: #fff;
+    padding:1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .header-1 .logo i{
+    color:var(--green);
+}
+
+.header .header-1 .search-form{
+    width: 50rem;
+    height: 5rem;
+    border: var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 2.5rem;
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding:0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+    background-color: white;
+}
+
+.header .header-1 .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover{
+    color: var(--green);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+    font-size: 2.5rem;
+    margin-left: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover{
+    color: var(--red);
+}
+
+#search-btn{
+    display: none;
+}
+
+.header .header-2{
+    background: var(--green);
+}
+
+.header .header-2 .navbar{
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover{
+    background: var(--dark-color);
+    border-radius: 5rem;
+}
+
+.header .header-2.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.container{
+	width: 100%;
+	height: 100vh;
+	background-image: url(/images/bg.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+
+.form-box{
+	width: 90%;
+	max-width: 450px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgb(132 132 132 / 62%);
+	padding: 50px 60px 70px;
+	text-align: center;
+	border-radius: 5px;
+    box-shadow: 12px 12px 20px 5px #1c1c1c;
+}
+
+.form-box h1{
+	font-size: 37px;
+	margin-bottom: 60px;
+	color: var(--green);
+}
+
+.input-field{
+	background: #eaeaea;
+	margin: 15px 0;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	max-height: 50px;
+	transition: max-height 0.5s;
+	overflow: hidden;
+    padding-bottom: 5px;
+}
+
+input{
+	width: 100%;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	padding: 18px 15px;
+}
+
+.input-field i{
+	margin-left: 15px;
+	color: black;
+}
+
+form p{
+	text-align: center;
+	font-size: 13px;
+	margin-top: 20px;
+}
+
+form p a{
+	text-decoration: none;
+	color: var(--dark-color);
+}
+
+.btn-field{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+    margin-top: 4rem;
+}
+
+.btn-field button{
+	flex-basis: 48%;
+	background: var(--green);
+	color: white;
+	height: 40px;
+	border-radius: 20px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	transition: background 1s;
+    position:  relative;
+}
+
+.input-group{
+	height: 280px;
+}
+
+.btn-field button.disable{
+	background: #eaeaea;
+	color: #555;
+
+}
+
+.input-field-2{
+	background: #eaeaea;
+	margin: 15px 0;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	max-height: 80px;
+	transition: max-height 0.5s;
+	overflow: hidden;
+    padding-bottom: 24px;
+}

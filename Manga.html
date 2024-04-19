@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manga books</title>
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="fonts/css/all.min.css">
+    <link rel="stylesheet" href="2.css">
+    <!-- font awesome cdn link -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+</head>
+<body>
+    
+    <script src="script.js"></script>
+    
+       <!-- header section starts -->
+       <header class="header">
+        <div class="header-1">
+            <a href="#" class="logo"> <i class="fas fa-book"></i>Otaku heaven</a>
+
+            <!--form action="" class="search-form">
+                <input type="search" name="" placeholder="search here" id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form-->
+
+            <div class="icons">
+                <!--div id="search-btn" class="fas fa-search"></div-->
+                <div class="search-container">
+                    <input type="search" name="" placeholder="Search products..." id="search-box">
+                    <button class="search-btn" onclick="searchProducts()"><i class="fas fa-search"></i></button>
+                </div>
+                <a href="#" class="fa-solid fa-bookmark"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <div class="icon-cart">
+                    <i href="#" class="fas fa-shopping-cart"></i>
+                    <span>0</span>
+                </div>
+                <a href="/login/login.html" class="fas fa-user"></a>
+            </div>
+        </div>
+
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="Manga.html">Books</a>
+                <a href="Merchandise.html">Merchandises</a>
+                <a href="Action Figures .html">Action Figure</a>
+                <!--a href="checkout.html">Checkout</a-->
+            </nav>
+        </div>
+    </header>
+    <!-- heder section end-->
+
+     <!-- Manga Books panel -->
+    <main class="services-container">
+        <div class="cartTab">
+            <h1>Shopping cart</h1>
+            <div class="listCart">
+                
+            </div>
+
+            <div class="butn">
+                <button class="close">CLOSE</button>
+                <button class="close check" onclick="checkout.html">CHECKOUT</button>
+            </div>
+        </div>
+        <section class="product" data-id="1">
+           <a href="#"><img src="Manga/Jujutsu Kaisen.png" alt="Jujutsu Kaisen"></a> 
+            <h2>Jujutsu Kaisen Vol.1</h2>
+            <p>Price:Rs.0</p>
+            <button class="butn addCart">save</button>
+            <a href="pdfs\Jujutsu Kaisen - CH 117 @Manga_Gallery.pdf" download><button>Download</button></a>
+        </section>
+
+        <section class="product" data-id="2">
+            <a href="#"><img src="Manga/Demon Slayer.png" alt="Demon Slayer"></a>
+            <h2>Demon Slayer Vol.1</h2>
+            <p>Price: Rs.0</p>
+            <button class="butn addCart">Save</button>
+            <a href="pdfs\Demon Slayer - CH 205 @Manga_Gallery.pdf" download><button>Download</button></a>
+        </section>
+
+        <section class="product" data-id="3">
+                <a href="#"><img src="Manga/Aot.png" alt="Attack On Titan"></a>
+                <h2>Attack on Titan</h2>
+                <p>Price: Rs.199</p>
+                <button class="butn addCart">Save</button>
+                <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="4">
+           <a href="#"><img src="Manga/naruto.png" alt="Naruto"></a>
+            <h2>Naruto Vol.1</h2>
+            <p>Price: Rs.0</p>
+            <button class="butn addCart">Save</button>
+            <a href="pdfs\[Vol 01] Naruto @MangaXAura.pdf"><button>Download</button></a>
+        </section>
+
+        <section class="product" data-id="5">
+        <a href="#"><img src="Manga/One piece.png" alt="One Piece"></a>
+        <h2>One Piece</h2>
+        <p>Price: Rs.499</p>
+        <button class="butn addCart">Save</button>
+        <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="6">
+            <a href="#"><img src="Manga/Dragon Ball Z.png" alt="Dragon Ball Z"></a>
+            <h2>Dragon Ball z</h2>
+            <p>Price: Rs.0</p>
+            <button class="butn addCart">Save</button>
+            <a href="pdfs\Attack On Titan CH - 139.5 @Manga_Infinite.pdf"><button>Download</button></a>
+            </section>
+
+        <section class="product" data-id="7">
+           <a href="#"><img src="Manga/Boruto vol 1.png" alt="Boruto"></a>
+            <h2>Boruto</h2>
+            <p>Price: Rs.0</p>
+             <button class="butn addCart">Save</button>
+            <button>Download</button>
+        </section>
+
+        <section class="product" data-id="8">
+            <a href="#"><img src="Manga/my hero academia.png" alt="My Hero Academia"></a>
+            <h2>My Hero Academia</h2>
+            <p>Price: Rs.239</p>
+             <button class="butn addCart">Save</button>
+            <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="9">
+            <a href="#"><img src="Manga/chainsaw man.png" alt="ChainSaw Man"></a>
+            <h2>ChainSaw Man</h2>
+            <p>Price: Rs.289</p>
+             <button class="butn addCart">Save</button>
+            <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="10">
+            <a href="#"><img src="Manga/black clover.png" alt="Black Clover"></a>
+            <h2>Black Clover</h2>
+            <p>Price: Rs.0</p>
+             <button class="butn addCart">Save</button>
+            <button>Download</button>
+        </section>
+        
+        <section class="product" data-id="11">
+           <a href="#"><img src="Manga/death note.png" alt="Death Note"></a> 
+            <h2>Death Note</h2>
+            <p>Price: Rs.409</p>
+             <button class="butn addCart">Save</button>
+            <button>Buy</button>
+        </section>
+
+
+    </main>
+    <script src="js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+    
+        function searchProducts() {
+            // Get the search term entered by the user
+            var searchTerm = document.getElementById("search-box").value.toLowerCase().trim();
+            
+            // Get all product items
+            var productItems = document.querySelectorAll('.product');
+            
+            // Loop through each product item to find matches
+            productItems.forEach(function(item) {
+                var productName = item.querySelector('h2').textContent.toLowerCase();
+                
+                // Check if the product name contains the search term
+                if (productName.includes(searchTerm)) {
+                    // Show the matching product item
+                    item.style.display = 'block';
+                } else {
+                    // Hide product items that do not match the search term
+                    item.style.display = 'none';
+                }
+            });
+        }
+    
+</script>
+</body>
+</html>

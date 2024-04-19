@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+body{
+    background-image: url(images/bg.jpg);
+    background-attachment: fixed;
+}
+:root{
+    --green:#27ae60;
+    --dark-color: #219150;
+    --black: #000000;
+    --light-color: #dcdcdc;
+    --border: .1rem solid rgba(0,0,0,.1);
+    --border-hover:.1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0, 0, 0, 0.575);
+    --red:#ff0000;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition: width none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+
+section{
+    padding: 5rem 9%;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--green);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background: var(--dark-color);
+    border-radius: 3rem;
+}
+
+.header .header-1{
+    background: #fff;
+    padding:1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .header-1 .logo i{
+    color:var(--green);
+}
+
+.header .header-1 .search-form{
+    width: 50rem;
+    height: 5rem;
+    border: var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 2.5rem;
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding:0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+    background-color: white;
+}
+
+.header .header-1 .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover{
+    color: var(--green);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+    font-size: 2.5rem;
+    margin-left: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover{
+    color: var(--red);
+}
+
+#search-btn{
+    display: none;
+}
+
+.header .header-2{
+    background: var(--green);
+}
+
+.header .header-2 .navbar{
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover{
+    background: var(--dark-color);
+}
+
+.header .header-2.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+} 
+
+/*book slider code starts from here*/
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+    padding: 28px;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+}
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 1.1rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.purchase-info input{
+    width: 60px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:first-of-type{
+    background: #256eff;
+    padding-right: 16px;
+    margin-right: 26px;
+    margin-left: 15px;
+}
+.purchase-info .btn:last-of-type{
+    background: var(--green);
+    padding-right: 16px;
+}
+.purchase-info .btn:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10rem;
+        margin-top: 34rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}

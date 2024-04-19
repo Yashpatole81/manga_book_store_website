@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add content</title>
+        <!-- font awesome cdn link -->
+        <link rel="stylesheet" href="fonts/css/all.min.css">
+        <!--css file link-->
+        <link rel="stylesheet" href="content_style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    </head>
+<body>
+        <!-- header section starts -->
+        <header class="header">
+            <div class="header-1">
+                <a href="#" class="logo"> <i class="fas fa-book"></i>Otaku heaven</a>
+    
+                <form action="" class="search-form">
+                    <input type="search" name="" placeholder="search here" id="search-box">
+                    <label for="search-box" class="fas fa-search"></label>
+                </form>
+    
+                <div class="icons">
+                    <div id="search-btn" class="fas fa-search"></div>
+                    <a href="#" class="fa-solid fa-bookmark"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="/login/login.html" class="fas fa-user"></a>
+                </div>
+            </div>
+    
+            <div class="header-2">
+                <nav class="navbar">
+                    <a href="index.html">Home</a>
+                    <a href="Manga.html">Books</a>
+                    <a href="Merchandise.html">Merchandises</a>
+                    <a href="Action Figures.html">Action Figure</a>
+                    <a href="#">Add content</a>
+                    <!--a href="order tracking/track_order.html">Track Orders</a-->
+                </nav>
+            </div>
+        </header>
+        <!-- header section ends -->
+        <div class="container">
+            <div class="form-box">
+                <h1 id="title">Upload Your Content</h1>
+                <form>
+                    <div class="input-group">
+                        <div class="input-field" id="nameField">
+                            <i class="fa-solid fa-user" style="font-size: 1.8rem;"></i>
+                            <input type="text" placeholder="Name" id="Name" required>
+                        </div>
+                    
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"  style="font-size: 1.8rem;"></i>
+                            <input type="email" placeholder="Email" id="Email" required>
+                        </div>
+    
+                        <div class="input-field">
+                            <i class="fa-solid fa-file"  style="font-size: 1.8rem;"></i>
+                            <input type="file" placeholder="Content" id="Content" accept=".pdf" required>
+                        </div>
+
+                        <div class="input-field-2">
+                            <input type="textarea" placeholder="Comment" id="Comment" required>
+                        </div>
+                    </div>
+                    <div class="btn-field">
+                        <button type="button" id="UploadBtn" onclick="uploadContent()">Upload Content</button>
+                        <p id="validation"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            function uploadContent() {
+            var name = document.getElementById('Name').value;
+            var email = document.getElementById('Email').value;
+            var contentFile = document.getElementById('Content').files[0];
+            var comment = document.getElementById('Comment').value;
+
+            var formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('contentFile', contentFile);
+            formData.append('comment', comment);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'upload.php', true);
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Handle success response
+                        alert('Content uploaded successfully.');
+                        // Optionally, reset form fields
+                        document.getElementById('uploadForm').reset();
+                    } else {
+                        // Handle error response
+                        alert('Error uploading content.');
+                    }
+                }
+            };
+
+            xhr.send(formData);
+        }
+        </script>
+</body>
+</html>

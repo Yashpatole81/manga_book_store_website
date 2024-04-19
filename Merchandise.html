@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>merchandise</title>
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="fonts/css/all.min.css">
+    <link rel="stylesheet" href="2.css">
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+</head>
+<body>
+    
+    <script src="script.js"></script>
+
+     <!-- header section starts -->
+     <header class="header">
+        <div class="header-1">
+            <a href="#" class="logo"> <i class="fas fa-book"></i>Otaku heaven</a>
+
+            <!--form action="" class="search-form">
+                <input type="search" name="" placeholder="search here" id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form-->
+
+            <div class="icons">
+                <!--div id="search-btn" class="fas fa-search"></div-->
+                <div class="search-container">
+                    <input type="search" name="" placeholder="Search products..." id="search-box">
+                    <button class="search-btn" onclick="searchProducts()"><i class="fas fa-search"></i></button>
+                </div>
+                <a href="#" class="fa-solid fa-bookmark"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <div class="icon-cart">
+                    <i href="#" class="fas fa-shopping-cart"></i>
+                    <span>0</span>
+                </div>
+                <a href="/login/login.html" class="fas fa-user"></a>
+            </div>
+        </div>
+
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="Manga.html">Books</a>
+                <a href="Merchandise.html">Merchandises</a>
+                <a href="Action Figures.html">Action Figure</a>
+               
+            </nav>
+        </div>
+    </header>
+    <!-- heder section end-->
+    
+     <!-- Merchandise panel-->
+    <main class="services-container">
+        <div class="cartTab">
+            <h1>Shopping cart</h1>
+            <div class="listCart">
+                
+            </div>
+
+            <div class="butn">
+                <button class="close">CLOSE</button>
+                <!--button class="close check"  onclick="checkout()">Checkout</button-->
+                <button class="close check" onclick="checkout()">Checkout</button>
+
+            </div>
+        </div>
+        
+        <section class="product" data-id="1">
+            <img src="Manga/cup.png"  height="400" width="300" alt="cup">
+            <h2>Cup</h2>
+            <p>Price: Rs.699</p>
+            <!--input type="number" class="quantity" value="1" min="1"-->
+
+            <button class="butn addCart">Add to Cart</button>
+            <button>Buy</button>
+        </section>
+        
+        <section class="product" data-id="2">
+            <img src="Manga/painting merchandise.png"  height="400" width="300" alt="Painting">
+            <h2>Painting</h2>
+            <p>Price: Rs.2599</p>
+            <button class="butn addCart">Add to cart</button>
+            <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="3">
+                <img src="Manga/Hoodie.png"  height="400" width="300" alt="Hoodie">
+                <h2>Hoodie</h2>
+                <p>Price: Rs.899</p>
+                <button class="butn addCart">Add to cart</button>
+                <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="4">
+            <img src="Manga/KeyChains.png"  height="400" width="300" alt="KeyChains">
+            <h2>KeyChains</h2>
+            <p>Price: Rs.299</p>
+            <button class="butn addCart">Add to Cart</button>
+            <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="5">
+        <img src="Manga/sword.png"  height="400" width="300" alt="Sword">
+        <h2>Sword</h2>
+        <p>Price: Rs.2999</p>
+        <button class="butn addCart">Add to Cart</button>
+        <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="6">
+            <img src="Manga/laptop skin.png"  height="400" width="300" alt="Laptop Skin">
+            <h2>Laptop Skin</h2>
+            <p>Price: Rs.399</p>
+            <button class="butn addCart">Add to Cart</button>
+            <button>Buy</button>
+            </section>
+
+        <section class="product" data-id="7">
+            <img src="Manga/caps.png"  height="400" width="300" alt="Caps">
+            <h2>Anime Caps</h2>
+            <p>Price: Rs.799</p>
+             <button class="butn addCart">Add to Cart</button>
+            <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="8">
+            <img src="Manga/Bagpack.png"  height="400" width="300" alt="Backpack">
+            <h2>Bagpack</h2>
+            <p>Price: Rs.1,299</p>
+             <button class="butn addCart">Add to Cart</button>
+            <button>Buy</button>
+        </section>
+
+        <section class="product" data-id="9">
+            <img src="Manga/water bottle.png"  height="400" width="300" alt="Water bottle">
+            <h2>Aluminium Water Bottle</h2>
+            <p>Price: Rs.289</p>
+             <button class="butn addCart">Add to Cart</button>
+            <button>Buy</button>
+        </section>
+        
+
+    </main>
+
+    <script src="js/cart.js"></script>
+    <script>
+         function checkout() {
+            var cartItems = document.querySelectorAll('.item');
+            var itemsDetails = [];
+            cartItems.forEach(function(item) {
+                var itemId = item.getAttribute('data-id');
+                var itemName = item.querySelector('.name').textContent;
+                var itemPrice = parseFloat(item.querySelector('.totalPrice').textContent.replace('Rs.', ''));
+                var itemQuantity = parseInt(item.querySelector('.quantity span:nth-child(2)').textContent);
+
+                
+                    itemsDetails.push({
+                        id: itemId,
+                        name: itemName,
+                        price: itemPrice,
+                        quantity: itemQuantity
+                    });
+                });
+            
+                // Redirect to the checkout page with the item details
+                var checkoutUrl = 'checkout.html?items=' + encodeURIComponent(JSON.stringify(itemsDetails));
+                window.location.href = checkoutUrl;
+            }
+    </script>
+    <script>
+    
+        function searchProducts() {
+            // Get the search term entered by the user
+            var searchTerm = document.getElementById("search-box").value.toLowerCase().trim();
+            
+            // Get all product items
+            var productItems = document.querySelectorAll('.product');
+            
+            // Loop through each product item to find matches
+            productItems.forEach(function(item) {
+                var productName = item.querySelector('h2').textContent.toLowerCase();
+                
+                // Check if the product name contains the search term
+                if (productName.includes(searchTerm)) {
+                    // Show the matching product item
+                    item.style.display = 'block';
+                } else {
+                    // Hide product items that do not match the search term
+                    item.style.display = 'none';
+                }
+            });
+        }
+    
+</script>
+<!--script>
+    
+    function addToCart(button) {
+        var product = button.closest('.product');
+        var itemId = product.getAttribute('data-id');
+        var itemName = product.querySelector('h2').textContent;
+        var itemPrice = parseFloat(product.querySelector('p').textContent.replace(/[^0-9.]/g, ''));
+        var itemQuantity = parseInt(product.querySelector('.quantity').value);
+
+        var itemsDetails = {
+            id: itemId,
+            name: itemName,
+            price: itemPrice,
+            quantity: itemQuantity
+        };
+
+        // Add the item to the cart
+        // You can implement your cart logic here
+    }
+</script-->
+
+
+</body>
+</html>
